@@ -5,8 +5,10 @@
 
 # print("Дата: 2026-10-25")
 
+
 def square(x: int) -> int:
     return x * x
+
 
 number = 7
 

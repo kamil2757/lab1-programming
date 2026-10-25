@@ -8,8 +8,15 @@
 
 #include <iostream>
 
-auto square(int x) -> int {
-    return x * x;
+auto square(int x) -> int { return x * x; }
+
+auto factorial(int n) -> long long {
+    if (n < 0) {
+        std::cerr << "Факториал определён только для неотрицательных чисел\n";
+        return -1;
+    }
+    if (n == 0 || n == 1) return 1;
+    return n * factorial(n - 1);
 }
 
 int main() {
@@ -19,6 +26,9 @@ int main() {
 
     std::cout << "Число: " << number << std::endl;
     std::cout << "Квадрат: " << result << std::endl;
+
+    auto fact = factorial(number);
+    std::cout << "Факториал: " << number << "! = " << fact << std::endl;
 
     return 0;
 }
